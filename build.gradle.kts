@@ -3,7 +3,6 @@ import org.jetbrains.kotlin.gradle.tasks.*
 
 plugins {
     kotlin("multiplatform") version "1.5.30"
-    kotlin("native.cocoapods") version "1.5.30"
     id("com.jfrog.artifactory") version "4.18.1"
     id("maven-publish")
 }
@@ -65,14 +64,6 @@ kotlin {
             ios32.binaries.getFramework("DEBUG"),
             ios64.binaries.getFramework("DEBUG")
         )
-    }
-
-    cocoapods {
-        framework {
-            summary = "Multiplatform library for iOS"
-            homepage = "https://dargoz.jfrog.io/artifactory/default-cocoapods-local/"
-            baseName = frameworkBaseName
-        }
     }
 
     sourceSets {
